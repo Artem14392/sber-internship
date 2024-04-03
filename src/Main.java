@@ -41,5 +41,15 @@ public class Main {
             System.out.println(city.toString());
         }
 
+        //наибольшее количество жителей
+        int[] arrPopulation = new int[records.size()];
+        int temp = 0;
+        for(City city: records){
+            arrPopulation[temp] = city.getPopulation();
+            temp++;
+        }
+        int max = Arrays.stream(arrPopulation).max().getAsInt();
+        System.out.println(max);
+
     }
 }
