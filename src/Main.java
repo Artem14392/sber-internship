@@ -25,11 +25,21 @@ public class Main {
             System.out.println(e.getMessage() + count);
         }
 
-        for (City city: records){
+        SortByName sortByName = new SortByName();
+        TreeSet<City> cityTreeSet = new TreeSet<>(sortByName);
+        cityTreeSet.addAll(records);
+
+        //Сортировка списка городов по наименованию в алфавитном порядке
+        for (City city: cityTreeSet){
             System.out.println(city.toString());
         }
-
-
+        SortByDistric sortByDistric = new SortByDistric();
+        TreeSet<City>  cityTreeSet1 = new TreeSet<>(sortByDistric);
+        cityTreeSet1.addAll(records);
+        //Сортировка списка городов по федеральному округу и наименованию города
+        for(City city: cityTreeSet1){
+            System.out.println(city.toString());
+        }
 
     }
 }
